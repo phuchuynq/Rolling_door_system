@@ -1,32 +1,28 @@
-# Smart Door Control System
+# Hệ thống cửa cuốn thông minh
 
-Hệ thống điều khiển cửa thông minh sử dụng ESP32, RFID, và Blynk để quản lý trạng thái cửa, kiểm soát truy cập và cấu hình qua giao diện web hoặc ứng dụng.
+# Mô tả hoạt động của hệ thống
+Hệ thống điều khiển cửa thông minh sử dụng ESP32, RFID, và Blynk để quản lý trạng thái cửa, kiểm soát truy cập và cấu hình qua giao diện web. Khi thẻ từ được quét hợp lệ, UID thẻ có trong cơ sở dữ liệu thì động cơ bước hoạt động quay làm mở cửa. Khi động cơ quay chạm đến công tắc hành trình trên thì động cơ sẽ dừng lại, tương tự khi quét thẻ lại lần 2 thì động cơ quay ngược chiều mở cửa làm đóng cửa, tương tự khi chạm đến công tắc hành trình dưới thì động cơ dừng lại và cửa đóng hoàn toàn.
 
-## Mục lục
-1. [Giới thiệu](#giới-thiệu)
-2. [Tính năng](#tính-năng)
-3. [Yêu cầu phần cứng](#yêu-cầu-phần-cứng)
-4. [Cài đặt và sử dụng](#cài-đặt-và-sử-dụng)
-5. [Hướng dẫn cấu hình](#hướng-dẫn-cấu-hình)
-6. [Hình ảnh minh họa](#hình-ảnh-minh-họa)
-7. [Tác giả](#tác-giả)
 
----
+## Vai trò trong dự án
+Lập trình code C, triển khai phần cứng, thiết kế giao diện hệ thống trên app Blynk, tạo giao diện web để quản lý cơ sở dữ liệu và điều khiển động cơ.
 
-## Giới thiệu
+## Chi tiết về phần cứng và phần mềm
 
-Hệ thống này cung cấp giải pháp điều khiển cửa tự động với khả năng nhận diện RFID, điều khiển động cơ bước, và tích hợp ứng dụng di động qua Blynk. Hệ thống hỗ trợ các tính năng như cấu hình qua WiFi, quản lý dữ liệu thẻ RFID, và theo dõi trạng thái cửa trong thời gian thực.
+### Phần cứng
+- Bo mạch **ESP32** với 30 chân để điều khiển các thiết bị trong hệ thống.
+- **Module RFID MFRC522** để nhận diện thẻ từ.
+- **Động cơ bước(step motor)** để điều khiển mở/đóng cửa.
+- **Driver TB6600** để điều khiển động cơ bước.
+- **2 công tắc hành trình** để giới hạn vị trí động cơ.
+- **3 button** để điều khiển cửa 1 cách thủ công (mở, đóng, dừng).
+- **Biến trở 10kOhm** để giảm nguồn cấp lên động cơ từ đó quyết định được động cơ quay nhanh hay chậm.
+- Dữ liệu thẻ được lưu trữ trên **Web Server**, đông thời có thể điều khiển cửa và thêm bớt dữ liệu thẻ UID.
 
----
-
-## Tính năng
-
-- **Quản lý truy cập bằng RFID:** Nhận diện thẻ hợp lệ để mở/đóng cửa.
-- **Điều khiển động cơ bước:** Hỗ trợ đóng/mở cửa với công tắc hành trình để xác định trạng thái cuối.
-- **Giao diện web:** Cấu hình WiFi, quản lý tài khoản và dữ liệu thẻ.
-- **Tích hợp Blynk:** Theo dõi trạng thái cửa và điều khiển từ xa qua ứng dụng di động.
-- **Thông báo qua WebSocket:** Gửi thông tin trạng thái hoặc dữ liệu truy cập.
-- **Cấu hình chế độ WiFi:** Hỗ trợ AP Mode (phát WiFi) và STA Mode (kết nối WiFi).
+### Phần mềm
+- Lập trình bằng **Arduino IDE** để điều khiển ESP32.
+- Viết **Google Apps Script** để tương tác với Google Sheets.  
+- Code Arduino được thiết kế để xử lý quét thẻ, điều khiển động cơ servo, và giám sát thời gian vào/ra theo yêu cầu dự án.
 
 ---
 
