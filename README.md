@@ -73,6 +73,7 @@ Sự phát triển của điện tử và lập trình, hiện nay đã có nhi�
 ## Kinh nghiệm tích lũy từ dự án
 Tôi đã học được cách tích hợp phần cứng và phần mềm để tạo ra một hệ thống hoàn chỉnh, từ lập trình C trên vi điều khiển ESP32 cho đến viết HTML, CSS, Javascript để khởi tạo 1 trang web có thể tương tác với phần cứng. Tôi cũng hiểu rõ hơn về việc quản lý thời gian xử lý và đảm bảo tính ổn định cho hệ thống. Bên cạnh đó, việc làm việc với các cảm biến và module khác nhau giúp tôi cải thiện kỹ năng xử lý và tích hợp hệ thống an toàn.
 
+[Xem hình ảnh thực tế và video demo hệ thống](https://drive.google.com/drive/folders/1_SHG40nfEkMB5-iA8ZEfWTfBTKq0bDkS?dmr=1&ec=wgc-drive-globalnav-goto)
 
 
 
