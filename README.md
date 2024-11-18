@@ -4,7 +4,7 @@
 Hệ thống điều khiển cửa thông minh sử dụng ESP32, RFID, và Blynk để quản lý trạng thái cửa, kiểm soát truy cập và cấu hình qua giao diện web. Khi thẻ từ được quét hợp lệ, UID thẻ có trong cơ sở dữ liệu thì động cơ bước hoạt động quay làm mở cửa. Khi động cơ quay chạm đến công tắc hành trình trên thì động cơ sẽ dừng lại, tương tự khi quét thẻ lại lần 2 thì động cơ quay ngược chiều mở cửa làm đóng cửa, tương tự khi chạm đến công tắc hành trình dưới thì động cơ dừng lại và cửa đóng hoàn toàn.
 
 
-## Vai trò trong dự án
+## Vai trò của tôi trong dự án
 Lập trình code C, triển khai phần cứng, thiết kế giao diện hệ thống trên app Blynk, tạo giao diện web để quản lý cơ sở dữ liệu và điều khiển động cơ.
 
 ## Chi tiết về phần cứng và phần mềm
