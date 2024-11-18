@@ -21,74 +21,54 @@ Lập trình code C, triển khai phần cứng, thiết kế giao diện hệ t
 
 ### Phần mềm
 - Lập trình bằng **Arduino IDE** để điều khiển ESP32.
-- Viết **Google Apps Script** để tương tác với Google Sheets.  
-- Code Arduino được thiết kế để xử lý quét thẻ, điều khiển động cơ servo, và giám sát thời gian vào/ra theo yêu cầu dự án.
+## Tiến Trình Chuyển Giao Mã Khi Người Dùng Sử Dụng Giao Diện
 
----
+### 1. **Trang Đăng Nhập (loginPage)**
+Khi người dùng truy cập vào hệ thống lần đầu tiên, trang đăng nhập sẽ yêu cầu nhập tên đăng nhập và mật khẩu.
+- Nếu thông tin đăng nhập chính xác, hệ thống sẽ chuyển hướng người dùng tới trang chính (`homePage`).
+- Nếu đăng nhập thất bại, hệ thống sẽ hiển thị thông báo lỗi.
 
-## Yêu cầu phần cứng
+### 2. **Trang Chính (homePage)**
+Sau khi đăng nhập thành công, người dùng sẽ được chuyển đến trang chính của hệ thống:
+- **Kiểm tra trạng thái đăng nhập**: Nếu người dùng chưa đăng nhập, hệ thống sẽ tự động chuyển về trang đăng nhập.
+- **Chức năng Đăng Xuất**: Người dùng có thể đăng xuất và quay lại trang đăng nhập.
 
-- **Vi điều khiển:** ESP32 (30 chân).
-- **Đầu đọc RFID:** MFRC522.
-- **Động cơ bước:** Loại sử dụng với driver (ví dụ: A4988, DRV8825).
-- **Driver động cơ:** Driver phù hợp với động cơ bước.
-- **Buzzer:** Tích hợp thông báo âm thanh.
-- **Các nút bấm:** Mở, đóng, dừng.
-- **Công tắc hành trình:** Giới hạn trạng thái mở/đóng cửa.
-- **Nguồn cấp:** 5V/3.3V tùy theo phần cứng.
+### 3. **Trang Quản Lý Thẻ RFID (dataPage)**
+Sau khi đăng nhập thành công, người dùng có thể quản lý các thẻ RFID thông qua giao diện này:
+- **Thêm Thẻ RFID**: Người dùng có thể thêm một thẻ mới vào hệ thống, với mã thẻ và tên thẻ.
+- **Xóa Thẻ RFID**: Người dùng có thể xóa một thẻ đã đăng ký khỏi hệ thống.
+- **Hiển Thị Danh Sách Thẻ**: Hệ thống sẽ tự động tải và hiển thị danh sách các thẻ đã được đăng ký.
 
----
+### 4. **Trang Cài Đặt (setupPage)**
+Trang này cho phép người dùng thực hiện các cài đặt liên quan đến hệ thống cửa và thẻ RFID:
+- **Cài Đặt Hệ Thống**: Người dùng có thể thay đổi các cài đặt hệ thống nếu cần thiết.
+- **Kiểm Tra Trạng Thái Đăng Nhập**: Trang này chỉ có thể truy cập nếu người dùng đã đăng nhập thành công.
 
-## Cài đặt và sử dụng
+### 5. **Tính Năng Quản Lý Thẻ RFID**
+- **Thêm Thẻ RFID**: Sau khi nhập mã thẻ và tên thẻ, hệ thống sẽ lưu trữ thẻ vào cơ sở dữ liệu.
+- **Xóa Thẻ RFID**: Khi người dùng xác nhận xóa một thẻ, hệ thống sẽ loại bỏ thẻ đó khỏi danh sách.
+- **Danh Sách Thẻ RFID**: Danh sách tất cả các thẻ RFID đã đăng ký sẽ được hiển thị dưới dạng bảng, và người dùng có thể chọn bất kỳ thẻ nào để sửa hoặc xóa.
 
-1. **Kết nối phần cứng:** 
-   - Kết nối các thành phần như mô tả trong sơ đồ mạch (chưa có sẵn ở đây, cần cập nhật hình minh họa).
-   - Lưu ý kiểm tra các chân được định nghĩa trong code (`#define`).
+### 6. **Quá Trình Thực Hiện**
+- **Đăng Nhập**: Người dùng nhập tên đăng nhập và mật khẩu. Nếu đúng, chuyển sang trang chính, nếu sai sẽ thông báo lỗi.
+- **Truy Cập Trang Chính**: Trang này kiểm tra trạng thái đăng nhập và cung cấp các chức năng đăng xuất.
+- **Quản Lý Thẻ RFID**: Sau khi vào trang quản lý thẻ, người dùng có thể thêm mới hoặc xóa thẻ và xem danh sách thẻ đã đăng ký.
+- **Cài Đặt Hệ Thống**: Trang cài đặt cung cấp các lựa chọn để cấu hình hệ thống và thẻ RFID.
 
-2. **Tải code lên ESP32:**
-   - Sử dụng Arduino IDE với các thư viện cần thiết:
-     - `MFRC522`
-     - `AccelStepper`
-     - `BlynkSimpleEsp32`
-     - `ArduinoJson`
-   - Tải code lên ESP32.
+## Hướng Dẫn Sử Dụng
 
-3. **Cấu hình hệ thống:**
-   - Kết nối với WiFi phát ra từ ESP32 (AP Mode).
-   - Truy cập giao diện web tại `192.168.4.1`.
-   - Cấu hình WiFi, tài khoản, và các thông tin khác.
+1. **Đăng Nhập**: Truy cập vào trang đăng nhập, nhập tên đăng nhập và mật khẩu. Nếu đúng, bạn sẽ được chuyển đến trang chính.
+2. **Trang Chính**: Tại đây, bạn có thể chọn "Đăng xuất" để thoát khỏi hệ thống.
+3. **Quản Lý Thẻ RFID**:
+   - Nhập mã thẻ và tên thẻ trong các ô nhập liệu.
+   - Nhấn nút "Thêm" để thêm thẻ mới vào hệ thống.
+   - Nhấn nút "Xóa" để xóa thẻ đã chọn.
+   - Danh sách thẻ sẽ được hiển thị dưới dạng bảng. Bạn có thể nhấp vào bất kỳ dòng nào để xem chi tiết thẻ.
+4. **Trang Cài Đặt**: Cấu hình các thiết lập của hệ thống nếu cần thiết.
 
-4. **Tích hợp Blynk:**
-   - Sử dụng mã Blynk được nhập trong giao diện cấu hình.
-   - Theo dõi trạng thái cửa và điều khiển qua ứng dụng Blynk.
 
----
 
-## Hướng dẫn cấu hình
 
-1. **Reset về mặc định:**
-   - Nhấn và giữ nút cấu hình (`btSetup`) trong 15 giây để reset hệ thống.
-2. **Cấu hình tài khoản:**
-   - Sử dụng giao diện web để thay đổi tên đăng nhập và mật khẩu.
-3. **Thêm/xóa dữ liệu thẻ:**
-   - Thêm hoặc xóa thẻ RFID trực tiếp qua giao diện web.
 
----
 
-## Hình ảnh minh họa
 
-*(Thêm các hình ảnh về hệ thống, sơ đồ mạch, giao diện web, hoặc ứng dụng Blynk tại đây.)*
-
----
-
-## Tác giả
-
-- **Tên:** *(Thêm tên hoặc nickname của bạn)*
-- **Liên hệ:** *(Email hoặc liên kết GitHub cá nhân)*
-- **Ghi chú:** Vui lòng liên hệ nếu có bất kỳ thắc mắc nào liên quan đến dự án.
-
----
-
-## Ghi chú bổ sung
-
-Dự án này được phát triển với mục đích cá nhân và học tập. Vui lòng trích dẫn tác giả nếu sử dụng hoặc chia sẻ mã nguồn.
