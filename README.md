@@ -1,7 +1,7 @@
 # Hệ thống cửa cuốn thông minh
 
 # Mô tả hoạt động của hệ thống
-Hệ thống điều khiển cửa thông minh sử dụng ESP32, RFID, và Blynk để quản lý trạng thái cửa, kiểm soát truy cập và cấu hình qua giao diện web. Khi thẻ từ được quét hợp lệ, UID thẻ có trong cơ sở dữ liệu thì động cơ bước hoạt động quay làm mở cửa. Khi động cơ quay chạm đến công tắc hành trình trên thì động cơ sẽ dừng lại, tương tự khi quét thẻ lại lần 2 thì động cơ quay ngược chiều mở cửa làm đóng cửa, tương tự khi chạm đến công tắc hành trình dưới thì động cơ dừng lại và cửa đóng hoàn toàn.
+Hệ thống điều khiển cửa thông minh sử dụng ESP32, thẻ RFID và Blynk để quản lý trạng thái cửa và kiểm soát truy cập qua giao diện web. Khi thẻ từ được quét và có trong cơ sở dữ liệu, cửa sẽ mở nhờ động cơ bước quay. Khi động cơ quay đến vị trí đã định, công tắc hành trình sẽ dừng động cơ. Nếu thẻ từ được quét lại lần thứ hai, động cơ sẽ quay ngược lại để đóng cửa, và khi cửa đến vị trí đóng hoàn toàn, công tắc hành trình sẽ dừng động cơ.
 
 
 ## Vai trò của tôi trong dự án
@@ -21,6 +21,7 @@ Lập trình code C, triển khai phần cứng, thiết kế giao diện hệ t
 
 ### Phần mềm
 - Lập trình bằng **Arduino IDE** để điều khiển ESP32.
+- Lập trình **HTML, CSS, JavaScript** để khởi tạo giao diện hệ thống, mục đích lưu trữ cơ sở dữ liệu, điều khiển chức năng.
 ## Tiến Trình Chuyển Giao Mã Khi Người Dùng Sử Dụng Giao Diện
 
 ### 1. **Trang Đăng Nhập (loginPage)**
@@ -66,6 +67,11 @@ Trang này cho phép người dùng thực hiện các cài đặt liên quan đ
    - Danh sách thẻ sẽ được hiển thị dưới dạng bảng. Bạn có thể nhấp vào bất kỳ dòng nào để xem chi tiết thẻ.
 4. **Trang Cài Đặt**: Cấu hình các thiết lập của hệ thống nếu cần thiết.
 
+## Vì sao làm dự án này, tính khả thi của dự án
+Sự phát triển của điện tử và lập trình, hiện nay đã có nhiều nơi trển khai nhiều mô hình IoT, điển hình là nhà thông minh, cửa thông minh,... Thì cửa cuốn thông minh cũng là 1 trong số đó. Mô hình cửa cuốn thông minh có tính khả thi cao, cả về mặt kỹ thuật và ứng dụng thực tế. Các linh kiện cần thiết đều sẵn có với chi phí hợp lý. Với khả năng mở rộng và tính năng bảo mật, cửa cuốn thông minh không chỉ mang lại sự tiện lợi mà còn đảm bảo an toàn và kiểm soát cao, phù hợp với các yêu cầu hiện đại về tự động hóa và an ninh.
+
+## Kinh nghiệm tích lũy từ dự án
+Tôi đã học được cách tích hợp phần cứng và phần mềm để tạo ra một hệ thống hoàn chỉnh, từ lập trình C trên vi điều khiển ESP32 cho đến viết HTML, CSS, Javascript để khởi tạo 1 trang web có thể tương tác với phần cứng. Tôi cũng hiểu rõ hơn về việc quản lý thời gian xử lý và đảm bảo tính ổn định cho hệ thống. Bên cạnh đó, việc làm việc với các cảm biến và module khác nhau giúp tôi cải thiện kỹ năng xử lý và tích hợp hệ thống an toàn.
 
 
 
