@@ -68,10 +68,10 @@ Trang này cho phép người dùng thực hiện các cài đặt liên quan đ
 4. **Trang Cài Đặt**: Cấu hình các thiết lập của hệ thống nếu cần thiết.
 
 ## Vì sao làm dự án này, tính khả thi của dự án
-Sự phát triển của điện tử và lập trình, hiện nay đã có nhiều nơi trển khai nhiều mô hình IoT, điển hình là nhà thông minh, cửa thông minh,... Thì cửa cuốn thông minh cũng là 1 trong số đó. Mô hình cửa cuốn thông minh có tính khả thi cao, cả về mặt kỹ thuật và ứng dụng thực tế. Các linh kiện cần thiết đều sẵn có với chi phí hợp lý. Với khả năng mở rộng và tính năng bảo mật, cửa cuốn thông minh không chỉ mang lại sự tiện lợi mà còn đảm bảo an toàn và kiểm soát cao, phù hợp với các yêu cầu hiện đại về tự động hóa và an ninh.
+Sự phát triển của điện tử và lập trình, hiện nay đã có nhiều nơi trển khai nhiều mô hình IoT, điển hình là nhà thông minh, cửa thông minh,... thì cửa cuốn thông minh cũng là 1 trong số đó. Mô hình cửa cuốn thông minh có tính khả thi cao, cả về mặt kỹ thuật và ứng dụng thực tế. Các linh kiện cần thiết đều sẵn có với chi phí hợp lý. Với khả năng mở rộng và tính năng bảo mật, cửa cuốn thông minh không chỉ mang lại sự tiện lợi mà còn đảm bảo an toàn và kiểm soát cao, phù hợp với các yêu cầu hiện đại về tự động hóa và an ninh.
 
 ## Kinh nghiệm tích lũy từ dự án
-Tôi đã học được cách tích hợp phần cứng và phần mềm để tạo ra một hệ thống hoàn chỉnh, từ lập trình C trên vi điều khiển ESP32 cho đến viết HTML, CSS, Javascript để khởi tạo 1 trang web có thể tương tác với phần cứng. Tôi cũng hiểu rõ hơn về việc quản lý thời gian xử lý và đảm bảo tính ổn định cho hệ thống. Bên cạnh đó, việc làm việc với các cảm biến và module khác nhau giúp tôi cải thiện kỹ năng xử lý và tích hợp hệ thống an toàn.
+Tôi đã học được cách tích hợp phần cứng và phần mềm để tạo ra một hệ thống hoàn chỉnh, từ lập trình C trên vi điều khiển ESP32 cho đến viết HTML, CSS, Javascript để khởi tạo 1 trang web có thể tương tác với phần cứng thông qua giao thức websocket. Tôi cũng hiểu rõ hơn về việc quản lý thời gian xử lý và đảm bảo tính ổn định cho hệ thống. Bên cạnh đó, việc làm việc với các cảm biến và module khác nhau giúp tôi cải thiện kỹ năng xử lý và tích hợp hệ thống an toàn.
 
 [Xem hình ảnh thực tế và video demo hệ thống](https://drive.google.com/drive/folders/1_SHG40nfEkMB5-iA8ZEfWTfBTKq0bDkS?dmr=1&ec=wgc-drive-globalnav-goto)
 
