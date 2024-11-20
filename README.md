@@ -1,7 +1,7 @@
 # Hệ thống cửa cuốn thông minh
 
 # Mô tả hoạt động của hệ thống
-Hệ thống điều khiển cửa thông minh sử dụng ESP32, thẻ RFID và Blynk, giao diện Web để quản lý dữ liệu và điều khiển phần cứng. Khi thẻ từ được quét và có trong cơ sở dữ liệu, cửa sẽ mở nhờ động cơ bước quay. Khi động cơ quay đến vị trí đã định, công tắc hành trình trên sẽ dừng động cơ. Nếu thẻ từ được quét lại lần thứ hai, động cơ sẽ quay ngược lại để đóng cửa, và khi cửa đến vị trí đóng hoàn toàn, công tắc hành trình dưới sẽ dừng động cơ. Ngoài ra cũng có thể điều khiển thông qua 3 nút bấm (mở, đóng, dừng) động cơ. Cũng có thể điều khiển cửa thông qua app Blynk và Webserver 
+Hệ thống điều khiển cửa thông minh sử dụng ESP32, thẻ RFID và Blynk, giao diện Web để quản lý dữ liệu và điều khiển phần cứng. Khi thẻ được quét và thông tin thẻ có trong cơ sở dữ liệu, cửa sẽ mở nhờ động cơ bước quay. Khi động cơ quay đến vị trí đã định, công tắc hành trình trên sẽ dừng động cơ. Nếu thẻ từ được quét lại lần thứ hai, động cơ sẽ quay ngược lại để đóng cửa, và khi cửa đến vị trí đóng hoàn toàn, công tắc hành trình dưới sẽ dừng động cơ. Ngoài ra cũng có thể điều khiển thông qua 3 nút bấm (mở, đóng, dừng) động cơ. Cũng có thể điều khiển cửa thông qua app Blynk và Webserver 
 
 
 ## Vai trò trong dự án
